@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { contact } from '../content/site';
+---
+<Base title="Privacy notice" description="How this website handles your information.">
+  <PageHead crumb="Privacy notice" title="Privacy notice" lede="How this website handles your information." />
+  <section style="padding-top:48px">
+    <div class="wrap statement">
+      <h2>What this website collects</h2>
+      <p>This website does not use cookies, analytics or tracking, and it has no forms. It does not collect personal information from you.</p>
+      <p>Like any website, the company that hosts it keeps short-lived technical logs, such as the address of the device that requested a page, to keep the service running and secure.</p>
+      <h2>If you contact us</h2>
+      <p>If you phone or email us, we use your details only to reply to you. Please do not include medical or personal health details.</p>
+      <h2>Questions</h2>
+      <p>To ask about your information, email <a href={`mailto:${contact.email}`}>{contact.email}</a> or call <a href={contact.phoneHref}>{contact.phone}</a>.</p>
+    </div>
+  </section>
+</Base>

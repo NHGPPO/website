@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+
+const vision = [
+  'We will be trusted by our patients.',
+  'We will have effective relationships with other parts of the health and social care system through working in partnership.',
+  'We will be the trusted, credible voice of our practices.',
+  'We will protect, enhance and develop general practice as independent providers.',
+  'We will be trusted by our shareholding practices.',
+  'We will provide patient-centred services driven by innovation and collaboration.',
+  'We will support practices to be sustainable for the benefit of patient care.',
+  'We will promote innovation and change in general practice and beyond.',
+];
+const values = [
+  'Act in a way that promotes the health and wellbeing of our communities.',
+  'Work in partnership with patients and carers to empower them to make decisions about their health and wellbeing.',
+  'Build partnerships with other providers, commissioners and partners.',
+  'Be open, transparent and honest.',
+  'Act on behalf of all practices.',
+  'Invest earnings back into achieving our vision.',
+  'Value our existing and potential workforce.',
+  'Make general practice an attractive place to work.',
+];
+---
+<Base title="Our mission" description="Why NHGPPO exists, what we are working towards, and how we work.">
+  <PageHead crumb="Mission" title="Our mission" lede="Why we exist, what we are working towards, and how we work." />
+  <section class="mband">
+    <div class="wrap">
+      <p class="big">We are an alliance of local practices entrusted to secure sustainable, consistent, high quality general practice for North Manchester.</p>
+      <p class="lede">Our mission is to protect, develop and innovate general practice. Our aim is to put patients and practices at the heart of local, integrated community services. We will work transparently, in partnership with patients, practices, commissioners and other providers.</p>
+    </div>
+  </section>
+  <section class="surface">
+    <div class="wrap">
+      <h2>Our vision</h2>
+      <ul class="vgrid">{vision.map((v) => <li>{v}</li>)}</ul>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <h2>Our values</h2>
+      <ul class="values">{values.map((v) => <li><Icon name="check" /><span>{v}</span></li>)}</ul>
+    </div>
+  </section>
+</Base>

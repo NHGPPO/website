@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { contact } from '../content/site';
+---
+<Base title="Accessibility statement" description="How accessible nhgppo.co.uk is and how to report a problem.">
+  <PageHead crumb="Accessibility statement" title="Accessibility statement" lede="This statement applies to nhgppo.co.uk, run by NHGPPO Ltd." />
+  <section style="padding-top:48px">
+    <div class="wrap statement">
+      <p>We want as many people as possible to be able to use this website. For example, that means you should be able to:</p>
+      <ul>
+        <li>change colours, contrast levels and fonts using browser or device settings</li>
+        <li>zoom in up to 400% without the text spilling off the screen</li>
+        <li>navigate the whole website using just a keyboard or speech recognition software</li>
+        <li>listen to the whole website using a screen reader</li>
+      </ul>
+      <p>We have also made the text as simple as possible to understand. <a href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+      <h2>How accessible this website is</h2>
+      <p>This website is designed to meet the Web Content Accessibility Guidelines version 2.2 AA standard. Every change is checked automatically for accessibility problems before it is published. A full manual review is in progress, and this statement will be updated with its results.</p>
+      <h2>Feedback and contact information</h2>
+      <p>If you need information on this website in a different format, such as accessible PDF, large print, easy read, audio recording or braille, email <a href={`mailto:${contact.email}`}>{contact.email}</a> or call <a href={contact.phoneHref}>{contact.phone}</a>.</p>
+      <h2>Reporting accessibility problems with this website</h2>
+      <p>We are always looking to improve the accessibility of this website. If you find any problems not listed on this page or think we are not meeting accessibility requirements, contact us using the details above.</p>
+      <h2>Preparation of this accessibility statement</h2>
+      <p>This statement was prepared on 19 November 2026.</p>
+    </div>
+  </section>
+</Base>

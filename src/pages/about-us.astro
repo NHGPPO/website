@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+
+const pilots = [
+  "The Prime Minister's Challenge Fund (PMCF)",
+  'High Impact Primary Care (HIPC)',
+  'Health Development Coordinators (HDC)',
+  'A&E Primary Same Day Care (SDC)',
+  'Match Fit, with Manchester City Football Club',
+  'Dedicated Sunday GP access for carers',
+];
+const current = [
+  ['Victoria Mill Health Centre', 'October 2017 to date'],
+  ['Charlestown Medical Centre', 'October 2017 to date'],
+  ['Park View Medical Centre', 'March 2020 to date'],
+];
+const completed = [
+  ["Prime Minister's Challenge Fund", '2015 to 2016'],
+  ['7 Day Extended Access Service', '2016 to 2020'],
+  ['Special Allocation Scheme', 'July 2019 to March 2023'],
+  ['Covid Service', 'April 2020 to September 2022'],
+  ['Enhanced Access DES for four North PCNs', 'April 2020 to September 2022'],
+  ['PCN Enhanced Access: Cheetham, Crumpsall, City Centre and Ancoats', 'September 2022 to March 2025'],
+  ['Winter Resilience Services', 'December 2023 to March 2024'],
+];
+---
+<Base title="About us" description="NHGPPO Ltd is a not-for-profit membership organisation supporting North Manchester's 34 general practices and the wider local health system.">
+  <PageHead crumb="About us" title="About us" lede="NHGPPO Ltd is a not-for-profit membership organisation. We work closely with and support North Manchester's 34 general practices and the wider local health system, at both secondary and community level.">
+    <div class="actions"><a class="btn primary" href="/contact/">Contact us</a></div>
+  </PageHead>
+  <section>
+    <div class="wrap two">
+      <div>
+        <h2>Convenient, expert, local healthcare</h2>
+        <p class="lede" style="margin-top:16px">Since we began, the Federation has been awarded and has delivered national and local APMS and GMS contracts. We have been instrumental in project managing, mobilising and implementing high-profile pilot schemes.</p>
+      </div>
+      <div>
+        <h3>Pilot schemes</h3>
+        <ul class="chips">{pilots.map((p) => <li>{p}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+  <section class="surface">
+    <div class="wrap">
+      <h2>APMS and GMS contracts</h2>
+      <div class="two" style="margin-top:28px">
+        <div>
+          <h3><span class="tag">Current</span></h3>
+          <ul class="clist">{current.map(([n, d]) => <li><span>{n}</span><span>{d}</span></li>)}</ul>
+        </div>
+        <div>
+          <h3><span class="tag done">Completed</span></h3>
+          <ul class="clist">{completed.map(([n, d]) => <li><span>{n}</span><span>{d}</span></li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

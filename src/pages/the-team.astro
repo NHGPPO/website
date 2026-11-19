@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+
+const roles = [
+  { role: 'Chief Operating Officer and Group Practice Director', text: ['Oversight of all the service delivery and PCN support the organisation provides, including governance lead responsibilities.', 'Oversight of Park View, Victoria Mill and Charlestown medical practices.'] },
+  { role: 'Head of Service', text: ['Supports service delivery and works closely with the PCNs to make changes and put systems and processes in place. Also supports new business and special projects.'] },
+  { role: 'Group Manager', text: ['Supports new business and special projects, and service delivery, working closely with the PCNs and practices.'] },
+  { role: 'Head of Finance', text: ['Coordinates all aspects of financial management in the organisation.'] },
+  { role: 'Administration team', text: ['A dedicated team supporting service delivery and working closely with the PCNs to make changes and put systems and processes in place.'] },
+];
+const affiliates = [
+  { name: 'Manchester Primary Care Partnership', host: 'manchesterpcp.co.uk', href: 'https://manchesterpcp.co.uk/' },
+  { name: 'Greater Manchester Federations', host: 'gmfeds.org', href: 'https://www.gmfeds.org/' },
+];
+---
+<Base title="Our team" description="The NHGPPO team and the clinicians and practice staff who work with us.">
+  <PageHead crumb="The Team" title="Our team" lede="We are a small team supporting the day-to-day service work." />
+  <section>
+    <div class="wrap">
+      <h2>Who does what</h2>
+      <div class="roles">
+        {roles.map((r) => <article class="role"><h3>{r.role}</h3>{r.text.map((t) => <p>{t}</p>)}</article>)}
+      </div>
+    </div>
+  </section>
+  <section class="surface">
+    <div class="wrap two">
+      <div><h2>Others working for and with us</h2></div>
+      <div>
+        <p style="margin-bottom:16px">We have a wide range of directly employed and sessional clinicians who support service delivery or work within the primary care networks. Employed or otherwise, this workforce enables us to deliver high quality care, and to support individual practices and the primary care networks to do the same.</p>
+        <p>We also draw on the skills and expertise of local practice staff for some of our services. We do not employ them directly, but while they support our service we value their contribution and take responsibility for what they do.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <h2>Affiliated organisations</h2>
+      <p style="margin-top:14px">We are shareholders of other GP federations, which we support to provide services or support for general practice.</p>
+      <div class="aff">
+        {affiliates.map((a) => <a href={a.href}><span><b>{a.name}</b><span>{a.host}</span></span><Icon name="external" /><span class="sr">(opens external site)</span></a>)}
+      </div>
+    </div>
+  </section>
+</Base>
