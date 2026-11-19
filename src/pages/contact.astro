@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { contact } from '../content/site';
+// The online form (approved design) is added once NHGPPO supplies the privacy wording (NHG-006).
+---
+<Base title="Contact us" description="Phone, email or visit the NHGPPO team at Victoria Mill, Manchester.">
+  <PageHead crumb="Contact" title="Contact us" lede={`Get in touch with the NHGPPO team. We are open ${contact.hours}.`} />
+  <section>
+    <div class="wrap cgrid">
+      <div class="cards">
+        <div class="ccard"><Icon name="phone" /><div><h2>Call us</h2><p><a href={contact.phoneHref}>{contact.phone}</a></p><p class="muted">{contact.hours}</p></div></div>
+        <div class="ccard"><Icon name="mail" /><div><h2>Email us</h2><p><a href={`mailto:${contact.email}`}>north.manchesteraccess@<wbr>nhs.net</a></p></div></div>
+        <div class="ccard"><Icon name="map-pin" /><div><h2>Visit us</h2><p set:html={contact.address.join('<br>')} /><p style="margin-top:8px"><a href={contact.mapUrl}>Get directions<span class="sr"> (opens Google Maps)</span></a></p></div></div>
+      </div>
+      <div class="panel">
+        <h2 style="margin-bottom:20px">Before you get in touch</h2>
+        <div class="warn"><Icon name="alert" /><p><b>Do not include medical or personal health details.</b> For medical advice contact your GP practice or call NHS 111. In an emergency call 999.</p></div>
+        <p style="margin-top:20px">To book an evening or weekend appointment, contact your own GP practice. They book enhanced access appointments for you.</p>
+        <p style="margin-top:20px"><a class="btn primary" href={`mailto:${contact.email}`}>Email the team <Icon name="arrow-right" /></a></p>
+      </div>
+    </div>
+  </section>
+</Base>

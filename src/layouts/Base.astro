@@ -1,0 +1,75 @@
+---
+import '../styles/site.css';
+import Icon from '../components/Icon.astro';
+import { contact, nav } from '../content/site';
+
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+const fullTitle = path === '/' ? title : `${title} | Northern Health GPPO`;
+const canonical = new URL(path, Astro.site).href;
+const current = (href: string) => (href === path ? 'page' : undefined);
+---
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{fullTitle}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta name="theme-color" content="#1E2A5A">
+<link rel="preload" href="/fonts/poppins-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip btn primary" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap hd">
+    <a class="logo" href="/"><img src="/logo.svg" alt="Northern Health GPPO Ltd, home" width="259" height="68"></a>
+    <nav class="main" aria-label="Main">
+      <ul>
+        {nav.map((n) => <li><a href={n.href} aria-current={current(n.href)}>{n.label}</a></li>)}
+        <li><a href="/contact/" class="cta" aria-current={current('/contact/')}>Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav"><Icon name="menu" />Menu</button>
+  </div>
+  <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Main">
+    <ul>
+      {nav.map((n) => <li><a href={n.href} aria-current={current(n.href)}>{n.label}</a></li>)}
+      <li><a href="/contact/" aria-current={current('/contact/')}>Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <slot />
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="ft">
+      <div><span class="plate"><img class="logo" src="/logo.svg" alt="Northern Health GPPO Ltd" width="228" height="60"></span></div>
+      <div>
+        <h2>Get in touch</h2>
+        <dl class="cdl">
+          <div><dt><Icon name="phone" />Phone</dt><dd><a href={contact.phoneHref}>{contact.phone}</a></dd></div>
+          <div><dt><Icon name="mail" />Email</dt><dd><a href={`mailto:${contact.email}`}>{contact.email}</a></dd></div>
+          <div><dt><Icon name="map-pin" />Address</dt><dd>{contact.address.join(', ')}</dd></div>
+          <div><dt><Icon name="clock" />Opening hours</dt><dd>{contact.hours}</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="legal">
+      <ul>
+        <li><a href="/accessibility/">Accessibility statement</a></li>
+        <li><a href="/privacy-notice/">Privacy notice</a></li>
+        <li><a href="/contact/">Contact us</a></li>
+      </ul>
+      <p>&copy; NHGPPO Ltd {new Date().getFullYear()}. Site by Systemwork.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

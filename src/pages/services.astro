@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+
+const support = [
+  'Recruitment, hosting and retention of PCN support teams and Additional Roles Reimbursement Scheme roles',
+  'Financial management and budget monitoring',
+  'Support and advice whenever it is needed',
+  'Submission of national and local returns',
+  'General administrative and governance support and advice',
+];
+---
+<Base title="Our services" description="Evening and weekend appointments for patients, and Primary Care Network support for North Manchester's 34 member practices.">
+  <PageHead crumb="Services" title="Our services" lede="NHGPPO Ltd is a not-for-profit membership organisation. We work closely with and support North Manchester's 34 general practices and the wider local health system, at both secondary and community level.">
+    <ul class="inpage" aria-label="On this page">
+      <li><a href="#service-provision">Service provision<Icon name="chevron" /></a></li>
+      <li><a href="#pcn-support">Primary Care Network support<Icon name="chevron" /></a></li>
+      <li><a href="#partnership-working">Partnership working<Icon name="chevron" /></a></li>
+    </ul>
+  </PageHead>
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="svc" id="service-provision">
+        <div class="sblock">
+          <span class="tile blue"><Icon name="stethoscope" /></span>
+          <h2>Service provision</h2>
+          <p>Evening and weekend GP, nurse and blood test appointments, as an extension of your own practice.</p>
+        </div>
+        <div class="body">
+          <p>We have been commissioned to provide many services over the years. We currently provide Enhanced Access Services (first called the Prime Minister's Challenge Fund, then extended access) on behalf of two Primary Care Networks in North Manchester.</p>
+          <p>As part of this service we provide GP consultations (face to face and by telephone), phlebotomy and nurse appointments (long-term condition reviews and smears) in and outside core GP hours, including evenings and weekends. Patients should see this as an extension of what their own practice does.</p>
+          <h3 style="margin-top:32px">How booking works</h3>
+          <ol class="steps">
+            <li><div><b>Book through your own practice</b>Ask your GP practice for an enhanced access appointment.</div></li>
+            <li><div><b>Be seen in the evening or at the weekend</b>GP, nurse and blood test appointments outside core hours.</div></li>
+            <li><div><b>Your practice is kept informed</b>Everything from your appointment is shared back with your practice.</div></li>
+          </ol>
+          <p class="callout">Any spare GP telephone appointments can also be booked by NHS 111.</p>
+        </div>
+      </div>
+      <div class="svc" id="pcn-support">
+        <div class="sblock">
+          <span class="tile green"><Icon name="users" /></span>
+          <h2>Primary Care Network support</h2>
+          <p>Workforce, finance, returns and governance support for our 34 member practices and their PCNs.</p>
+        </div>
+        <div class="body">
+          <p>All 34 of our practices are members. Our support includes, but is not limited to:</p>
+          <ul class="ticks">{support.map((s) => <li><Icon name="check" /><span>{s}</span></li>)}</ul>
+        </div>
+      </div>
+      <div class="svc" id="partnership-working">
+        <div class="sblock">
+          <span class="tile red"><Icon name="puzzle" /></span>
+          <h2>Partnership working</h2>
+          <p>Working with partners across the health system for the best possible patient care.</p>
+        </div>
+        <div class="body">
+          <p>We have a history of working with our partners to achieve the best possible care for patients and support for our practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
