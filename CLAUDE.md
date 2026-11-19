@@ -2,7 +2,7 @@
 
 Version 1.4 · 19 November 2026 · Owner: Jamie Durham (Systemwork) · Client: NHGPPO Ltd
 
-Static Astro site for nhgppo.co.uk, hosted on Netlify (NHGPPO's team). Built from the approved design: Concept 2 "Two doors", canvas https://claude.ai/artifact/VWwEWky5W9dDSDWnMUE3AH. Project docs live in the claude.ai Project "NHS" (START-HERE, spec, chat-jobs, runbooks). Board: https://claude.ai/artifact/CNjPJBpETHZ8Ma6ji4E4yk
+Static Astro site for nhgppo.co.uk, hosted on Netlify (NHGPPO's team, site `nhgppo`, https://nhgppo.netlify.app). The repo is public for now because Netlify Free will not build a private organisation repo; it goes private again when NHGPPO moves to Pro (NHG-017). Built from the approved design: Concept 2 "Two doors", canvas https://claude.ai/artifact/VWwEWky5W9dDSDWnMUE3AH. Project docs live in the claude.ai Project "NHS" (START-HERE, spec, chat-jobs, runbooks). Board: https://claude.ai/artifact/CNjPJBpETHZ8Ma6ji4E4yk
 
 ## How to ship
 1. Work only from a board card that is in Doing.
