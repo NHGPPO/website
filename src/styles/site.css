@@ -116,7 +116,9 @@ nav.main a.cta:hover{background:var(--navy-050)}
 
 /* home: top and two doors */
 .k2top{background:var(--page);padding:56px 0 40px}
-.k2tg{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
+.k2tg{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:40px;align-items:center}
+.obj{display:block;width:100%;height:auto}
+.k2tg .obj.hero{max-width:520px;width:115%;margin-left:auto;align-self:end}
 .k2top h1{font-size:clamp(32px,3vw,44px);max-width:none}
 .k2top .lede{margin-top:18px;max-width:46ch}
 .doors{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
@@ -128,7 +130,7 @@ nav.main a.cta:hover{background:var(--navy-050)}
 .door.pat a:not(.btn){color:#fff}
 .door h2{font-size:clamp(32px,3.4vw,48px)}
 .door h3{font-size:21px;margin-bottom:4px}
-.door .row{display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+.door .row{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center}
 .door .row .tile{width:48px;height:48px;border-radius:12px;display:grid;place-items:center}
 .door.pat .row .tile{background:rgba(255,255,255,.12);color:#fff}
 .door.prac .row .tile{background:var(--t-green);color:var(--i-green)}
@@ -168,6 +170,7 @@ nav.main a.cta:hover{background:var(--navy-050)}
 .svc .tile svg{width:30px;height:30px}
 .tile.blue{background:var(--t-blue);color:var(--i-blue)}.tile.green{background:var(--t-green);color:var(--i-green)}.tile.red{background:var(--t-red);color:var(--i-red)}
 .svc .sblock p{color:var(--muted);margin-top:14px;font-size:19px}
+.svc .sobj{display:block;width:180px;height:180px;object-fit:contain;margin:-12px 0 8px -12px}
 .svc .body p+p{margin-top:16px}
 .steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
@@ -249,6 +252,7 @@ footer.site a:focus-visible{color:#18202F}
   .k2low{gap:32px}
   .door,.door.pat,.door.prac{padding:36px var(--gut)}
   .k2top{padding:40px 0 28px}
+ .k2tg{grid-template-columns:1fr}.k2tg .obj.hero{display:none}
   .ticks,.cdl,.aff,.vgrid{grid-template-columns:1fr}
   .roles{grid-template-columns:1fr}.role,.role:nth-child(1),.role:nth-child(2){grid-column:auto}
   .values{columns:1}

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import Icon from '../components/Icon.astro';
+import Render from '../components/Render.astro';
 
 const support = [
   'Recruitment, hosting and retention of PCN support teams and Additional Roles Reimbursement Scheme roles',
@@ -23,7 +24,7 @@ const support = [
     <div class="wrap">
       <div class="svc" id="service-provision">
         <div class="sblock">
-          <span class="tile blue"><Icon name="stethoscope" /></span>
+          <Render name="service-provision" class="sobj" />
           <h2>Service provision</h2>
           <p>Evening and weekend GP, nurse and blood test appointments, as an extension of your own practice.</p>
         </div>
@@ -41,7 +42,7 @@ const support = [
       </div>
       <div class="svc" id="pcn-support">
         <div class="sblock">
-          <span class="tile green"><Icon name="users" /></span>
+          <Render name="pcn-support" class="sobj" />
           <h2>Primary Care Network support</h2>
           <p>Workforce, finance, returns and governance support for our 34 member practices and their PCNs.</p>
         </div>
@@ -52,7 +53,7 @@ const support = [
       </div>
       <div class="svc" id="partnership-working">
         <div class="sblock">
-          <span class="tile red"><Icon name="puzzle" /></span>
+          <Render name="partnership-working" class="sobj" />
           <h2>Partnership working</h2>
           <p>Working with partners across the health system for the best possible patient care.</p>
         </div>

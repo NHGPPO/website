@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Render from '../components/Render.astro';
 ---
 <Base title="Northern Health GPPO: supporting North Manchester's GP practices and patients" description="A not-for-profit membership organisation supporting North Manchester's 34 GP practices and the wider local health system.">
   <div class="k2top">
@@ -11,17 +12,18 @@ import Icon from '../components/Icon.astro';
         <h1>Supporting North Manchester's GP practices and patients</h1>
         <p class="lede">A not-for-profit membership organisation supporting North Manchester's 34 GP practices and the wider local health system.</p>
       </div>
+      <img class="obj hero" src="/images/hero-mat.webp" alt="" width="1168" height="880" fetchpriority="high">
     </div>
   </div>
   <div class="doors">
     <div class="door pat on-dark">
       <h2>For patients</h2>
       <div class="row">
-        <span class="tile"><Icon name="stethoscope" /></span>
+        <Render name="service-provision" dark="always" />
         <div><h3>Evening and weekend appointments</h3><p>GP, nurse and blood test appointments outside core hours. Book through your own practice.</p></div>
       </div>
       <div class="row">
-        <span class="tile"><Icon name="info" /></span>
+        <span aria-hidden="true"></span>
         <div><h3>Need medical help now?</h3><p>Call NHS 111, or 999 in an emergency.</p></div>
       </div>
       <a class="btn" href="/services/#service-provision">How booking works <Icon name="arrow-right" /></a>
@@ -29,11 +31,11 @@ import Icon from '../components/Icon.astro';
     <div class="door prac">
       <h2>For practices and partners</h2>
       <div class="row">
-        <span class="tile"><Icon name="users" /></span>
+        <Render name="pcn-support" />
         <div><h3>Primary Care Network support</h3><p class="muted">Workforce, finance, returns and governance support for our 34 member practices and their PCNs.</p></div>
       </div>
       <div class="row">
-        <span class="tile"><Icon name="puzzle" /></span>
+        <Render name="partnership-working" />
         <div><h3>Partnership working</h3><p class="muted">Working with partners across the health system for the best possible patient care.</p></div>
       </div>
       <a class="btn secondary" href="/services/#pcn-support">Practice support <Icon name="arrow-right" /></a>

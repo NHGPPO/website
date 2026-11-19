@@ -1,0 +1,11 @@
+---
+// Decorative sculptural render from the approved canvas. Navy ceramic on light grounds,
+// light ceramic on dark grounds; one is shown at a time. Always alt="".
+interface Props { name: string; size?: number; class?: string; dark?: 'auto' | 'always' }
+const { name, size = 800, class: cls = 'obj', dark = 'auto' } = Astro.props;
+const light = `/images/${name}.webp`;
+const darkSrc = `/images/${name}-dark.webp`;
+---
+{dark === 'always'
+  ? <img class={cls} src={darkSrc} alt="" width={size} height={size} loading="lazy" decoding="async">
+  : <picture><source srcset={darkSrc} media="(prefers-color-scheme: dark)"><img class={cls} src={light} alt="" width={size} height={size} loading="lazy" decoding="async"></picture>}
